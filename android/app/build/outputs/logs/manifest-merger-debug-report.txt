@@ -6,6 +6,7 @@ INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main
 INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml:1:1-42:12
 MERGED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml:1:1-42:12
 MERGED from [:adivery] G:\Programing\AndroidStudioProjects\kode_meli\build\adivery\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:2:1-25:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -47,6 +48,8 @@ MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\f
 		ADDED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml:3:22-64
 application
 ADDED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml:4:4-41:19
+MERGED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:14:5-23:19
 MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:14:5-23:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:5-89
@@ -107,6 +110,8 @@ INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main
 INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml
 MERGED from [:adivery] G:\Programing\AndroidStudioProjects\kode_meli\build\adivery\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:adivery] G:\Programing\AndroidStudioProjects\kode_meli\build\adivery\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:7:5-10:51
 MERGED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:7:5-10:51
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -145,6 +150,14 @@ INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\debu
 	android:minSdkVersion
 		INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Programing\AndroidStudioProjects\kode_meli\android\app\src\debug\AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] G:\Programing\AndroidStudioProjects\kode_meli\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
 meta-data#com.google.android.gms.ads.AD_MANAGER_APP
 ADDED from [com.adivery:sdk:4.0.6] C:\Users\Moein\.gradle\caches\transforms-2\files-2.1\95d3adc7414c187d27359cf22f569b95\jetified-sdk-4.0.6\AndroidManifest.xml:15:9-17:36
 	android:value

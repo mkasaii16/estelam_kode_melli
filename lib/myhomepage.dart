@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:adivery/adivery.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String codemeli = '';
 bool resualt = false;
@@ -55,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Locale("fa", "IR"),
         ],
         home: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.blue[300],
           appBar: AppBar(
             backgroundColor: Colors.indigo,
@@ -66,26 +68,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: Container(
             // color: Colors.indigo[90],
+
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Center(
                 child: Column(
               children: [
                 Spacer(),
-                BannerAd(
-                  PLACEMENT_ID_BANNER,
-                  BannerAdSize.LARGE_BANNER,
-                  onAdLoaded: (ad) {},
-                  onAdClicked: (ad) {},
-                ),
-                Text(''),
                 Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width / 1.2,
                     height: 60,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.indigo[900],
+                      color: Colors.indigo,
                       boxShadow: [
                         BoxShadow(
                             blurRadius: 10.0,
@@ -99,10 +95,19 @@ class _MyHomePageState extends State<MyHomePage> {
                           codemeli = text;
                         },
                         textAlign: TextAlign.center,
+                        textAlignVertical: TextAlignVertical.center,
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w500),
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900),
                         decoration: InputDecoration(
-                            hintText: "کد ملی", border: OutlineInputBorder()))),
+                            hintText: "کد ملی",
+                            hintStyle: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.white,
+                                fontFamily: 'yek'),
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder()))),
                 Spacer(),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -122,19 +127,82 @@ class _MyHomePageState extends State<MyHomePage> {
                 first
                     ? Text('')
                     : resualt
-                        ? Text('کد ملی وارد شده معتبر میباشد',
-                            style: new TextStyle(
-                                fontSize: 25,
-                                color: Colors.green,
-                                fontFamily: 'yek'),
-                            textScaleFactor: 1.0)
-                        : Text('کد ملی وارد شده معتبر نمی باشد',
-                            style: new TextStyle(
-                                fontSize: 25,
-                                color: Colors.red,
-                                fontFamily: 'yek'),
-                            textScaleFactor: 1.0),
+                        ? Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.green[900],
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 10.0,
+                                    color: Colors.white,
+                                    spreadRadius: 3),
+                              ],
+                            ),
+                            child: Text('کد ملی وارد شده معتبر میباشد',
+                                style: new TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontFamily: 'yek'),
+                                textScaleFactor: 1.0))
+                        : Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.red[900],
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 10.0,
+                                    color: Colors.white,
+                                    spreadRadius: 3),
+                              ],
+                            ),
+                            child: Text('کد ملی وارد شده معتبر نمی باشد',
+                                style: new TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontFamily: 'yek'),
+                                textScaleFactor: 1.0)),
                 Spacer(),
+                BannerAd(
+                  PLACEMENT_ID_BANNER,
+                  BannerAdSize.LARGE_BANNER,
+                  onAdLoaded: (ad) {},
+                  onAdClicked: (ad) {},
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Spacer(),
+                    TextButton(
+                        onPressed: () {
+                          launchURL('https://mfuzzy.com');
+                        },
+                        child: Text(
+                          'Mokav وبسایت',
+                          style: TextStyle(color: Colors.white),
+                          textScaleFactor: 1,
+                        )),
+                    Spacer(),
+                    TextButton(
+                      onPressed: () {
+                        launchURL(
+                            'mailto:<info@mfuzzy.com>?subject=<برنامه استعلام کد ملی >&body=<ارتباط با توسعه دهنده   ->');
+                        // launch("email:" +
+                        //     Uri.encodeComponent('info@mfuzzy.com'));
+                      },
+                      child: Text('Email ایمیل',
+                          style: TextStyle(color: Colors.white),
+                          textScaleFactor: 1.0),
+                    ),
+                    Spacer(),
+                  ],
+                ),
               ],
             )),
           ),
@@ -146,12 +214,25 @@ class _MyHomePageState extends State<MyHomePage> {
     var dio = Dio();
     final response =
         await dio.get("https://api.codebazan.ir/codemelli/?code=$codemeli");
-    if (response.data['ok'] == 'true') {
-      resualt = true;
+
+    if (response.data['Ok'] == 'ture') {
+      setState(() {
+        resualt = true;
+      });
     } else {
-      resualt = false;
+      setState(() {
+        resualt = false;
+      });
     }
-    setState(() {});
-    _showInterstitial();
+
+    // _showInterstitial();
+  }
+}
+
+launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
